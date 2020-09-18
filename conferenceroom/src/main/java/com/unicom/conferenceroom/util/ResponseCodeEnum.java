@@ -1,0 +1,35 @@
+package com.unicom.conferenceroom.util;
+
+/**
+ * 定义响应的状态码
+ */
+public enum ResponseCodeEnum {
+    SUCCESS(1,"成功"),
+    ERROR(0,"失败"),
+    ;
+
+    private int code;
+    private String desc;
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    ResponseCodeEnum(int code, String desc) {
+        this.code = code;
+        this.desc = desc;
+    }
+}
+

@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User selectUserByName(String sss) {
         //调用dao层
-        User user = userDao.selectUserByName("SSS");
+        User user = userDao.selectUserByName(sss);
         return user;//返回的是Json数据，因为RestController注解中有@ResponseBody的作用
     }
 }

@@ -16,8 +16,8 @@ public class UserController {
 
     @RequestMapping(value = "find")
     public User findUserByName() {
-        //调用dao层
-        User user = userService.selectUserByName("SSS");
+
+        User user = userService.selectUserByName("123");
         return user;//返回的是Json数据，因为RestController注解中有@ResponseBody的作用
     }
 }

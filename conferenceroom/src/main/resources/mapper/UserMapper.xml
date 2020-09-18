@@ -3,7 +3,9 @@
 <mapper namespace="com.unicom.conferenceroom.dao.user.UserDao" >
 
     <select id="selectUserByName"  resultType="com.unicom.conferenceroom.entity.user.User">
-        SELECT * FROM user1 WHERE username = #{name}
+        SELECT * FROM user WHERE username = #{username}
     </select>
-
+    <select id="selectUser"  resultType="com.unicom.conferenceroom.entity.user.User">
+        SELECT * FROM user WHERE username = #{username} AND password = #{password}
+    </select>
 </mapper>
