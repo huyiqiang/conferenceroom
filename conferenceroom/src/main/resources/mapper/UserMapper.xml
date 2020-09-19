@@ -8,4 +8,23 @@
     <select id="selectUser"  resultType="com.unicom.conferenceroom.entity.user.User">
         SELECT * FROM user WHERE username = #{username} AND password = #{password}
     </select>
+    <select id="selectUserAll"  resultType="com.unicom.conferenceroom.entity.user.User">
+        SELECT * FROM user
+    </select>
+    <insert id="insertUser">
+        INSERT INTO user(username,password,repassword, department,role)
+        VALUES(#{username},#{password},#{repassword},#{department},#{role})
+    </insert>
+    <delete id="deleteUser">
+        DELETE  FROM user where id=#{id}
+    </delete>
+    <update id="updateUser">
+        UPDATE user SET
+        username = #{username},
+        password = #{password},
+        repassword = #{repassword},
+        department = #{department},
+        role = #{role}
+        WHERE id = #{id};
+    </update>
 </mapper>

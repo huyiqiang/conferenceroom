@@ -4,7 +4,9 @@ public class User {
     private int id;
     private String username;
     private String password;
-    private String phone;
+    private String repassword;
+    private String department;
+    private String role;
 
     public int getId() {
         return id;
@@ -30,21 +32,27 @@ public class User {
         this.password = password;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getRepassword() {
+        return repassword;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
