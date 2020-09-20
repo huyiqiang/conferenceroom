@@ -9,14 +9,14 @@ import java.util.List;
  **/
 public interface ConferenceroomService {
 
-    //数据库的查找
+   //数据库的查找
     List<Conferenceroom> getAllConferencerooms();
 
-    Conferenceroom selectConferenceroomByid(int id);
+    Conferenceroom selectConferenceroomByName(String roomname);
+
     //数据库的插入
     int insertConferenceroom(Conferenceroom conferenceroom);
 
-    String getConferenceroomByroomname(String roomname);
 
     //数据库的更新
     int updateConferenceroom(Conferenceroom conferenceroom);
