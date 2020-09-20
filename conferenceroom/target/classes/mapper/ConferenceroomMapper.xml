@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unicom.conferenceroom.dao.Conferenceroom.ConferenceroomDao" >
+
+    <select id="selectConferenceroomByid" resultType="com.unicom.conferenceroom.entity.Conferenceroom.Conferenceroom">
+            select * from conferenceroom where id=#{id}
+    </select>
+    <select id="selectConferenceroom"  resultType="com.unicom.conferenceroom.entity.Conferenceroom.Conferenceroom">
+        SELECT * FROM conferenceroom
+    </select>
+    <insert id="insertConferenceroom">
+          insert into conferenceroom(roomname,address,number,state,principal,airconditioning,projector,times) values(#{roomname},#{address},#{number},#{state},#{principal},#{airconditioning},#{projector},#{times})
+    </insert>
+
+    <update id="updateConferenceroom">
+        update conferenceroom set roomname=#{roomname},address=#{address},number=#{number},state=#{state},principal=#{principal},airconditioning=#{airconditioning},projector=#{projector},times=#{times} where id=#{id}
+    </update>
+
+    <delete id="deleteConferenceroom">
+        delete from conferenceroom where id=#{id}
+    </delete>
+</mapper>
+
+

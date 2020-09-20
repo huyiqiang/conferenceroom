@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>会议室查询</title>
+		<link href="../../css/table.css" rel="stylesheet" type="text/css">
+	</head>
+	<body leftmargin="0" topmargin="15">
+				
+		<table width="101%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+			  <th>查询会议室<br>
+		      &nbsp;</th>
+			</tr>
+			<form action="http://192.168.31.8:8080/conferenceroom" method="get">
+		      <tr> 
+		        <td>
+				
+				<table width="100%" border="0" cellpadding="0" cellspacing="1">
+		            <tr> 
+				      <td width="40%" height="22" bgcolor="#FFFFFF" align= "center" valign="middle" >
+		会议室名称：
+					      <input type="text" id="roomname" name="roomname" size="12">
+				        </td>
+
+					    <td width="20%" bgcolor="#FFFFFF" align= "center"> <input type="submit" name="query" id="query" value="查询" /></td>
+		            </tr>
+		          </table>
+				
+				</td>
+		        
+		      </tr>
+			</form>
+			  
+		      
+			  
+			  <tr>
+			  <td> 
+			  <table width="100%" border="0" cellpadding="0" cellspacing="1">
+		            <tr> 
+		            <td bgcolor="#FFFFFF">
+						<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF">
+		                  <tr> 
+		                    <td height="2" bgcolor="#993300"></td>
+		                  </tr>
+		                </table>
+		                <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+							<tr bgcolor="#FFFFFF">
+
+								<td width="10%" height="25">id</td>
+		                    	<td width="10%" height="25">会议室名称</td>
+		                    	<td width="8%">可容纳人数</td>
+								<td width="17%">负责人</td>
+								<td width="12%">状态</td>
+		                  	    <td>编辑</td>
+		                        <td>删除</td>
+						    </tr>
+						    
+							<tbody id="tbody">
+								
+							</tbody>	
+		                </table> 
+					</td>
+		            </tr>
+		        </table>
+			  </td>
+			  </tr>	 
+		
+		    </table>
+		
+	</body>
+	<script src="../../js/jquery-3.5.1.js"></script>
+	<script src="../../js/jquery-3.5.1.min.js"></script>
+	<script>
+		$(function () {
+		    findAll();
+			
+			//查询操作
+			$("#query").click(function () {
+			    var roomId = $("#roomname").val();
+				var number = $("#number").val();
+					
+			    if(roomId != ""){
+			        getUserById(roomId);
+			    }else{
+			        findAll();
+			    }
+			});
+			
+			//将点击事件委托为tbody，修改操作
+			$("#tbody").on("click",".btn-warning",function () {
+			    var userId = this.parentNode.parentNode.firstChild.innerHTML;
+			    $(location).attr("href","meetingroom_update.html?id=" + userId);
+			});
+		
+		
+		    //将点击事件委托为tbody，删除操作
+		    $("#tbody").on("click",".btn-info",function () {
+		        var flag = confirm("是否删除?");
+		        if (flag){
+		            deleteUser(this);
+		        }
+		    });
+		
+		});
+		
+		
+		function getUserById(roomId) {
+		    $.ajax({
+		        url:"http://192.168.56.1:8080/conferenceroom/"+roomId,
+		        type:"get",
+		        dataType:"json",
+		        success:function (result) {
+		            var dataTR =
+		                "<tr>" +
+							"<td>" + result.id + "</td>"+
+		                "<td>" + result.roomname + "</td>" +
+		                "<td>" + result.number + "</td>" +
+		                "<td>" + result.principal + "</td>" +
+		                "<td>" + result.state + "</td>" +
+		                "<td>" +
+		                "<a href='meetingroom_update.html'>"+
+		                "<input name='imageField' type='image' src='../../images/bianji.gif' width='16' height='16' border='0'>"+
+		                "</td>" +
+		                "<td>" + 
+						"<button type='button' class='btn btn-sm btn-info' >删除</button>" +"</td>" +
+		                "</tr>";
+		
+		            $("#tbody").html(dataTR);
+		        }
+		    });
+		}
+		
+		
+		function deleteUser(obj) {
+		    var userId = obj.parentNode.parentNode.firstChild.innerHTML;
+		
+		    $.ajax({
+		        url:"http://192.168.56.1:8080/conferenceroom/"+userId,
+		        type:"delete",
+		        dataType:"json",
+		        success:function (result) {
+		            if(result == "1"){
+		                findAll();
+		
+		                var msg = "<div class=\"alert alert-info\" role=\"alert\">删除成功!</div>";
+		                $("#msg").html(msg);
+		
+		                setTimeout(function () {
+		                    $("#msg").empty();
+		                },2000);
+		            }else{
+		                var msg = "<div class=\"alert alert-warning\" role=\"alert\">删除失败!</div>";
+		                $("#msg").html(msg);
+		
+		                setTimeout(function () {
+		                    $("#msg").empty();
+		                },2000);
+		            }
+		        }
+		    });
+		}
+		
+		function findAll() {
+		    $.ajax({
+		        url:"http://192.168.56.1:8080/conferenceroom",
+		        type:"get",
+		        dataType:"json",
+		        success:function (result) {
+		
+		            var dataTR = "";
+		            //动态拼接后台返回的数据
+		            $.each(result,function (index,value) {
+		                dataTR +=
+		                    "<tr>" +
+								"<td>" + value.id +
+								"<td>" + value.roomname + "</td>" +
+		                    "<td>" + value.number + "</td>" +
+		                    "<td>" + value.principal + "</td>" +
+		                    "<td>" + value.state + "</td>" +
+		                    "<td>" +
+							// "<a href='meetingroom_update.html'>"+
+							"<button type='button' class='btn btn-sm btn-warning' >修改</button>" +
+							
+		                    "</td>" +
+							"<td>" +
+							"<button type='button' class='btn btn-sm btn-info' >删除</button>"+
+							"</td>" +
+							
+		                    "</tr>";
+		            });
+		
+		            $("#tbody").html(dataTR);
+		        }
+		    });
+		}
+	</script>
+</html>

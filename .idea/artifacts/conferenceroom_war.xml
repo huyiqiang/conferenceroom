@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="conferenceroom:war">
+    <output-path>$PROJECT_DIR$/conferenceroom/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>conferenceroom</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="conferenceroom-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="conferenceroom:war exploded" />
+    </root>
+  </artifact>
+</component>

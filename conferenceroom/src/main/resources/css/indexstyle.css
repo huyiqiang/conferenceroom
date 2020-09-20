@@ -1,0 +1,30 @@
+body {
+	margin: 0px;	
+}
+a:link {
+color:#66FFFF;
+	font-family:ËÎÌו;
+	font-size:16px;
+	text-decoration: none;
+}
+a:active {
+	color: #FFFF33;
+	font-family:ËÎÌו;
+    font-size:16px;
+		text-decoration: none;
+}
+a:visited {
+color:#FFFFFF;
+	font-family:ËÎÌו;
+    font-size:16px;
+	text-decoration: none;
+}
+a:hover {
+color:#FFFF00;
+	font-family:"·ÂËÎ";
+	font-size:18px;
+	font-weight: bold;
+		text-decoration: none;
+}
+
+
