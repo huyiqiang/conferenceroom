@@ -15,16 +15,16 @@ import java.util.List;
 @Mapper
 public interface ConferenceroomDao {
 
-    /**
+   /**
      * 查询所有会议室信息
      */
 //    @Select("select * from conferenceroom")
     List<Conferenceroom> getAllConferencerooms();
 
     /**
-     * 按id条件查询会议室信息
+     * 按会议室名字查询会议室信息
      */
-    Conferenceroom selectConferenceroomByid(int id);
+    Conferenceroom selectConferenceroomByName(String roomname);
 
     /**
      * 新增会议室信息
