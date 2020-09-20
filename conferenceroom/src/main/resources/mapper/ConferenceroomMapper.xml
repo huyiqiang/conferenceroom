@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.unicom.conferenceroom.dao.Conferenceroom.ConferenceroomDao" >
 
-    <select id="selectConferenceroomByid" resultType="com.unicom.conferenceroom.entity.Conferenceroom.Conferenceroom">
+     <select id="selectConferenceroomByid" resultType="com.unicom.conferenceroom.entity.Conferenceroom.Conferenceroom">
             select * from conferenceroom where id=#{id}
     </select>
     <select id="getAllConferencerooms"  resultType="com.unicom.conferenceroom.entity.Conferenceroom.Conferenceroom">
@@ -13,8 +13,18 @@
     </insert>
 
     <update id="updateConferenceroom">
-        update conferenceroom set roomname=#{roomname},address=#{address},number=#{number},state=#{state},principal=#{principal},airconditioning=#{airconditioning},projector=#{projector},times=#{times} where id=#{id}
+        update conferenceroom set
+        roomname=#{roomname},
+        address=#{address},
+        number=#{number},
+        state=#{state},
+        principal=#{principal},
+        airconditioning=#{airconditioning},
+        projector=#{projector},
+        times=#{times}
+        where id=#{id};
     </update>
+
 
     <delete id="deleteConferenceroom">
         delete from conferenceroom where id=#{id}
