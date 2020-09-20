@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="conferenceroom:war">
-    <output-path>$PROJECT_DIR$/conferenceroom/target</output-path>
+    <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
         <module>conferenceroom</module>

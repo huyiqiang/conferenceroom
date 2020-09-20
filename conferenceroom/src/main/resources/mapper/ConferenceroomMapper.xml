@@ -5,7 +5,7 @@
     <select id="selectConferenceroomByid" resultType="com.unicom.conferenceroom.entity.Conferenceroom.Conferenceroom">
             select * from conferenceroom where id=#{id}
     </select>
-    <select id="selectConferenceroom"  resultType="com.unicom.conferenceroom.entity.Conferenceroom.Conferenceroom">
+    <select id="getAllConferencerooms"  resultType="com.unicom.conferenceroom.entity.Conferenceroom.Conferenceroom">
         SELECT * FROM conferenceroom
     </select>
     <insert id="insertConferenceroom">

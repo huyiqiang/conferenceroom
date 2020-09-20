@@ -18,7 +18,7 @@ public interface ConferenceroomDao {
     /**
      * 查询所有会议室信息
      */
-    @Select("select * from conferenceroom")
+//    @Select("select * from conferenceroom")
     List<Conferenceroom> getAllConferencerooms();
 
     /**

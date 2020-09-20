@@ -1,63 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e48adb1a-0743-4243-9012-952b78be55e4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/conferenceroom/conferenceroom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/conferenceroom/conferenceroom.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conferenceroom/src/main/java/com/unicom/conferenceroom/ConferenceroomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/conferenceroom/src/main/java/com/unicom/conferenceroom/ConferenceroomApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="8608ddeb-7846-42a2-b8f1-5f958cc4e8ef" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="D:\Applications\IntelliJ IDEA 2020.2\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1hlO92WpEC0Tn3f1DfqysIjT4EM" />
+  <component name="ProjectId" id="1hlNayXC5kolnNB6vrRfO3svduV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ConferenceroomApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="conferenceroom" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.unicom.conferenceroom.ConferenceroomApplication" />
@@ -66,61 +34,21 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e48adb1a-0743-4243-9012-952b78be55e4" name="Default Changelist" comment="" />
-      <created>1600582059378</created>
+      <changelist id="8608ddeb-7846-42a2-b8f1-5f958cc4e8ef" name="Default Changelist" comment="" />
+      <created>1600581785838</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1600582059378</updated>
-      <workItem from="1600582066897" duration="1794000" />
+      <updated>1600581785838</updated>
+      <workItem from="1600581796663" duration="1148000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="421" y="135" key="FileChooserDialogImpl" timestamp="1600583838977">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state x="421" y="135" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1600583838977" />
-    <state width="1280" height="189" key="GridCell.Tab.0.bottom" timestamp="1600583512831">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1280" height="189" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1600583512831" />
-    <state width="1280" height="189" key="GridCell.Tab.0.center" timestamp="1600583512830">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1280" height="189" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1600583512830" />
-    <state width="1280" height="189" key="GridCell.Tab.0.left" timestamp="1600583512830">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1280" height="189" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1600583512830" />
-    <state width="1280" height="189" key="GridCell.Tab.0.right" timestamp="1600583512830">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1280" height="189" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1600583512830" />
-    <state width="1280" height="189" key="GridCell.Tab.1.bottom" timestamp="1600583512831">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1280" height="189" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1600583512831" />
-    <state width="1280" height="189" key="GridCell.Tab.1.center" timestamp="1600583512831">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1280" height="189" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1600583512831" />
-    <state width="1280" height="189" key="GridCell.Tab.1.left" timestamp="1600583512831">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1280" height="189" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1600583512831" />
-    <state width="1280" height="189" key="GridCell.Tab.1.right" timestamp="1600583512831">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1280" height="189" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1600583512831" />
-    <state x="141" y="24" key="SettingsEditor" timestamp="1600583868618">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state x="141" y="24" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1600583868618" />
+    <option name="version" value="2" />
   </component>
 </project>
