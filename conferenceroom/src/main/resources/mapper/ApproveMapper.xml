@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unicom.conferenceroom.dao.approve.ApproveDao" >
+
+    <select id="selectConferenceOrder"  resultType="com.unicom.conferenceroom.entity.approve.Approve">
+       SELECT
+        c.id as conferenceId,
+        c.topic as topic,
+        c.number as number ,
+        c.level as level,
+        c.startTime as startTime,
+        c.endTime as endTime,
+        c.conferenceroom as conferenceRoom,
+        a.app_result as appResult,
+        a.app_status as appStatus,
+        a.id as approveId
+        from conference c,approve a
+        WHERE c.id = a.conference_id
+        <if test="approveId != null and approveId != '' ">
+            and a.id= #{approveId,jdbcType=VARCHAR}
+        </if>
+        <if test="conferenceId != null and conferenceId != '' ">
+            and c.id = #{conferenceId,jdbcType=VARCHAR}
+        </if>
+        <if test="topic != null and topic != '' ">
+            and c.topic= #{topic,jdbcType=VARCHAR}
+        </if>
+        <if test="number != null and number != '' ">
+            and c.number = #{number,jdbcType=VARCHAR}
+        </if>
+        <if test="level != null and level != '' ">
+            and c.level= #{level,jdbcType=VARCHAR}
+        </if>
+        <if test="conferenceRoom != null and conferenceRoom != '' ">
+            and c.conferenceroom = #{conferenceRoom,jdbcType=VARCHAR}
+        </if>
+        <if test="appResult">
+            and a.app_result = #{appResult,jdbcType=VARCHAR}
+        </if>
+        <if test="appStatus">
+            and a.app_status = #{appStatus,jdbcType=VARCHAR}
+        </if>
+        <if test="startTime != null and startTime != '' ">
+            and c.startTime = #{startTime,jdbcType=VARCHAR}
+        </if>
+        <if test="endTime != null and endTime != '' ">
+            and c.endTime = #{endTime,jdbcType=VARCHAR}
+        </if>
+
+    </select>
+
+    <select id="selectConferenceInfo"  resultType="com.unicom.conferenceroom.entity.approve.Approve">
+        SELECT
+        c.id as conferenceId,
+        c.topic as topic,
+        c.number as number ,
+        c.level as level,
+        c.startTime as startTime,
+        c.endTime as endTime,
+        c.conferenceroom as conferenceRoom,
+        c.file as file,
+        c.facility as facility,
+        c.attendee as attendee,
+        c.content as content
+        a.app_opinion as appOpinion
+        from conference c,approve a
+        where c.id = a.conference_id
+        and c.id = #{conferenceId}
+    </select>
+
+    <update id="approveConference" >
+    update approve
+        <set>
+        <if test="appResult ">
+            app_result = #{appResult,jdbcType=VARCHAR},
+        </if>
+        <if test="appStatus ">
+            app_status = #{appStatus,jdbcType=VARCHAR},
+        </if>
+        <if test="appOpinion ">
+            app_opinion = #{appOpinion,jdbcType=VARCHAR},
+        </if>
+        </set>
+        where conference_id = #{conferenceId}
+    </update>
+
+    <select id="selectConferenceById"  resultType="com.unicom.conferenceroom.entity.approve.Approve">
+    SELECT
+    c.id as conferenceId,
+    c.topic as topic,
+    c.number as number ,
+    c.level as level,
+    c.startTime as startTime,
+    c.endTime as endTime,
+    c.conferenceroom as conferenceRoom,
+    a.app_result as appResult,
+    a.app_status as appStatus,
+    a.id as id
+    from conference c,approve a
+    WHERE c.id = a.conference_id
+    <if test="conferenceId != null and conferenceId != '' ">
+        and c.id = #{conferenceId,jdbcType=VARCHAR}
+    </if>
+    </select>
+</mapper>
