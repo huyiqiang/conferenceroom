@@ -25,20 +25,18 @@ public class ConferenceroomServiceImpl implements ConferenceroomService {
         return  conferenceroomDao.getAllConferencerooms();
     }
 
+
     @Override
-    public Conferenceroom selectConferenceroomByid(int id){
-        Conferenceroom conferenceroom=conferenceroomDao.selectConferenceroomByid(id);
+    public Conferenceroom selectConferenceroomById(int id) {
+        Conferenceroom conferenceroom=conferenceroomDao.selectConferenceroomById(id);
         return conferenceroom;
     }
+
     @Override
     public  int insertConferenceroom(Conferenceroom conferenceroom) {
         return conferenceroomDao.insertConferenceroom(conferenceroom);
     }
 
-    @Override
-    public String getConferenceroomByroomname(String roomname) {
-        return null;
-    }
 
     @Override
     public int updateConferenceroom(Conferenceroom conferenceroom){
@@ -46,11 +44,11 @@ public class ConferenceroomServiceImpl implements ConferenceroomService {
         return num;
     }
 
+
     @Override
     public int deleteConferenceroom(int id){
         int num=conferenceroomDao.deleteConferenceroom(id);
         return num;
     }
-
 
 }
