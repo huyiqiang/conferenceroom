@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Create By lina on 2020/9/17
  **/
-
+//
 @CrossOrigin
 @RestController
 public class ConferenceroomController {
@@ -22,6 +22,7 @@ public class ConferenceroomController {
         Conferenceroom conferenceroom=conferenceroomService.selectConferenceroomByid(id);
         return JSON.toJSONString(conferenceroom);
     }
+
     @RequestMapping(value="/conferenceroom",method=RequestMethod.GET)
     public String getAllConferencerooms(){
         return JSON.toJSONString(conferenceroomService.getAllConferencerooms());
@@ -37,15 +38,18 @@ public class ConferenceroomController {
 
 
 
-    @RequestMapping(value="/meetingroom_update",method = RequestMethod.POST)
-    public  int updateConferenceroom(@RequestBody Conferenceroom conferenceroom){
-        return conferenceroomService.updateConferenceroom(conferenceroom);
+    @RequestMapping(value="/meetingroom_update/{id}",method = RequestMethod.PUT)
+    public  String updateConferenceroom(@PathVariable int id,@RequestBody Conferenceroom conferenceroom){
+        conferenceroom.setId(id);
+        return JSON.toJSONString(conferenceroomService.updateConferenceroom(conferenceroom));
     }
 
 
 
-    @RequestMapping(value="deleteConferenceroom",method = RequestMethod.DELETE)
-    public void deleteConferenceroom(@RequestBody Conferenceroom conferenceroom ){
-
+    @RequestMapping(value="/deleteConferenceroom/{userId}",method = RequestMethod.DELETE)
+    public String deleteConferenceroom(@PathVariable int userId ){
+        int i = conferenceroomService.deleteConferenceroom(userId);
+        //如果成功就返回success
+        return JSON.toJSONString(i);
     }
 }

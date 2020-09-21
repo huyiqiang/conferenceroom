@@ -40,6 +40,6 @@ public interface ConferenceroomDao {
     /**
      * 删除会议室信息
      */
-    int deleteConferenceroom(String id);
+    int deleteConferenceroom(int id);
 
 }

@@ -6,33 +6,33 @@
 		<link href="../../css/table.css" rel="stylesheet" type="text/css">
 	</head>
 	<body leftmargin="0" topmargin="15">
-				
+
 		<table width="101%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 			  <th>查询会议室<br>
 		      &nbsp;</th>
 			</tr>
-			<form action="http://192.168.31.8:8080/conferenceroom" method="get">
-		      <tr> 
+			<form >
+		      <tr>
 		        <td>
-				
+
 				<table width="100%" border="0" cellpadding="0" cellspacing="1">
-		            <tr> 
+		            <tr>
 				      <td width="40%" height="22" bgcolor="#FFFFFF" align= "center" valign="middle" >
-		会议室名称：
+		会议室ID：
 					      <input type="text" id="roomname" name="roomname" size="12">
 				        </td>
 
-					    <td width="20%" bgcolor="#FFFFFF" align= "center"> <input type="submit" name="query" id="query" value="查询" /></td>
+					    <td width="20%" bgcolor="#FFFFFF" align= "center"> <input type="button" name="query" id="query" value="查询" /></td>
 		            </tr>
 		          </table>
-				
+
 				</td>
-		        
+
 		      </tr>
 			</form>
-			  
-		      
+
+
 			  
 			  <tr>
 			  <td> 
@@ -78,7 +78,7 @@
 			//查询操作
 			$("#query").click(function () {
 			    var roomId = $("#roomname").val();
-				var number = $("#number").val();
+				// var number = $("#number").val();
 					
 			    if(roomId != ""){
 			        getUserById(roomId);
@@ -90,6 +90,7 @@
 			//将点击事件委托为tbody，修改操作
 			$("#tbody").on("click",".btn-warning",function () {
 			    var userId = this.parentNode.parentNode.firstChild.innerHTML;
+			    console.log("嘿嘿嘿"+userId);
 			    $(location).attr("href","meetingroom_update.html?id=" + userId);
 			});
 		
@@ -107,7 +108,7 @@
 		
 		function getUserById(roomId) {
 		    $.ajax({
-		        url:"http://192.168.56.1:8080/conferenceroom/"+roomId,
+		        url:"http://localhost:8080/conferenceroom/"+roomId,
 		        type:"get",
 		        dataType:"json",
 		        success:function (result) {
@@ -119,11 +120,9 @@
 		                "<td>" + result.principal + "</td>" +
 		                "<td>" + result.state + "</td>" +
 		                "<td>" +
-		                "<a href='meetingroom_update.html'>"+
-		                "<input name='imageField' type='image' src='../../images/bianji.gif' width='16' height='16' border='0'>"+
-		                "</td>" +
-		                "<td>" + 
-						"<button type='button' class='btn btn-sm btn-info' >删除</button>" +"</td>" +
+					"<button type='button' class='btn btn-sm btn-info' >删除</button>" +"</td>"+
+							"<td>"+"<button type='button' class='btn btn-sm btn-warning' >修改</button>" +
+					"</td>" +
 		                "</tr>";
 		
 		            $("#tbody").html(dataTR);
@@ -134,9 +133,9 @@
 		
 		function deleteUser(obj) {
 		    var userId = obj.parentNode.parentNode.firstChild.innerHTML;
-		
+		    console.log("哈哈哈"+userId)
 		    $.ajax({
-		        url:"http://192.168.56.1:8080/conferenceroom/"+userId,
+		        url:"http://localhost:8080/deleteConferenceroom/"+userId,
 		        type:"delete",
 		        dataType:"json",
 		        success:function (result) {
@@ -163,7 +162,7 @@
 		
 		function findAll() {
 		    $.ajax({
-		        url:"http://192.168.56.1:8080/conferenceroom",
+		        url:"http://localhost:8080/conferenceroom",
 		        type:"get",
 		        dataType:"json",
 		        success:function (result) {
@@ -178,14 +177,10 @@
 		                    "<td>" + value.number + "</td>" +
 		                    "<td>" + value.principal + "</td>" +
 		                    "<td>" + value.state + "</td>" +
-		                    "<td>" +
-							// "<a href='meetingroom_update.html'>"+
-							"<button type='button' class='btn btn-sm btn-warning' >修改</button>" +
-							
-		                    "</td>" +
-							"<td>" +
-							"<button type='button' class='btn btn-sm btn-info' >删除</button>"+
-							"</td>" +
+								"<td>" +
+								"<button type='button' class='btn btn-sm btn-info' >删除</button>" +"</td>"+
+								"<td>"+"<button type='button' class='btn btn-sm btn-warning' >修改</button>" +
+								"</td>" +
 							
 		                    "</tr>";
 		            });

@@ -22,5 +22,5 @@ public interface ConferenceroomService {
     int updateConferenceroom(Conferenceroom conferenceroom);
 
     //数据库的删除
-    int deleteConferenceroom(String  id);
+    int deleteConferenceroom(int  id);
 }

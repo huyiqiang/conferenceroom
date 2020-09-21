@@ -6,106 +6,108 @@
 		<link href="../../css/table.css" rel="stylesheet" type="text/css">
 	</head>
 	<body leftmargin="0" topmargin="15">
-		<form id="user-form" style="...">
-		<input type="hidden" id="id">
-		
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-		  <tr> <th>修改会议室</th>
-		  </tr>
-		 <tr>
-		 <td><div align="left">
-		      修改会议室:</div></td>
-		  </tr>
-		</table>
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-		  <tr> 
-		    <td>
-			
-			<table width="100%" border="0" cellpadding="0" cellspacing="1">
-		        <tr> 
-		          <td bgcolor="#000000"><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#000000">
-		              <tr> 
-		                <td height="2" bgcolor="#993300"></td>
-		              </tr>
-		            </table>
-		            <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#993300">
-						<tr bgcolor="#FFFFFF">
-							<td width="14%" height="25">id</td>
-							<td width="16%"><input name="id" type="text" size="15" value=""></td>
-						</tr>
-		              <tr bgcolor="#FFFFFF"> 
-					    <td width="14%" height="25">会议室名称</td>
-		                <td width="16%"><input name="roomname" type="text" size="15" value=""></td>
-			          </tr>
-		          <tr bgcolor="#FFFFFF"> 
-		                <td width="14%" height="25">会议室地址</td>
-		                <td width="16%"><input name="address" type="text" size="15" value=""></td>
-		              </tr>
-					   <tr bgcolor="#FFFFFF">
-					     <td height="25">是否有空调</td>
-					     <td><label>是
-		                     <input type="radio" name="airconditioning" value="radiobutton" selected>
-		                 </label>
-		                   <label> 否
-		                   <input type="radio" name="airconditioning" value="radiobutton">
-		                 </label></td>
-				      </tr>
-					   <tr bgcolor="#FFFFFF">
-					     <td height="25">能够容纳的人数</td>
-					     <td><input name="number" type="text" size="15" value=""></td>
-				      </tr>
-					   <tr bgcolor="#FFFFFF">
-					     <td height="25">负责人</td>
-					     <td><input name="principal" type="text" size="15" value=""></td>
-				      </tr>
-					   <tr bgcolor="#FFFFFF">
-					     <td height="25">是否有投影仪</td>
-					     <td><label>
-		                 是</label>
-					       <label></label>
-					       <label>
-					       <input type="radio" name="projector" value="radiobutton" selected>
-		                   </label>
-		                   <label> 否
-		                   <input type="radio" name="projector" value="radiobutton">
-		                   </label>
-		                 <label>                       </label><label>                       </label></td>
-				      </tr>
-					   <tr bgcolor="#FFFFFF">
-					     <td height="25">会议室使用次数（每月）</td>
-					     <td><input name="times" type="text" size="15" value=""></td>
-				      </tr>
-					  
-					  <tr bgcolor="#FFFFFF">
-					     <td height="25">会议室是否使用</td>
-					     <td><label>
-					     是</label>
-					       <label></label>
-					       <label>
-					       <input type="radio" name="state" value="使用中">
-					       </label>
-					       <label> 否
-					       <input type="radio" name="state" value="空闲">
-					       </label>
-					     <label>                       </label><label>                       </label></td>
-					  </tr>
-					  
-					   <tr bgcolor="#FFFFFF"> 
-					    <td width="14%" height="25" align="center">&nbsp;</td>
-		                <td width="16%" height="25" align="center">
-							<button type="button" class="btn btn-sm btn-primary">修改</button>
-							&nbsp;&nbsp;&nbsp;&nbsp;
+	<form id="user-form" style="...">
 
-		                  <label>
-		                </label><label></label><label>
-		                </label></td>
-		              </tr>
-		            </table> </td>
-		        </tr>
-		      </table>		</td>
-		  </tr> 
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr> <th>修改会议室</th>
+			</tr>
+			<tr>
+				<td><div align="left">
+					修改会议室:</div></td>
+			</tr>
 		</table>
-		</form>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="1">
+						<tr>
+							<td bgcolor="#000000"><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#000000">
+								<tr>
+									<td height="2" bgcolor="#993300"></td>
+								</tr>
+							</table>
+
+								<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#993300">
+									<!--<tr bgcolor="#FFFFFF">
+                                        <td width="14%" height="25">id</td>
+                                        <td width="16%"><input name="id" type="text" size="15"></td>
+                                    </tr>
+                                    -->
+									<input type="hidden" id="uid">
+
+									<tr bgcolor="#FFFFFF">
+										<td width="14%" height="25">会议室名称</td>
+										<td width="16%"><input name="roomname" id="roomname" type="text" size="15"></td>
+									</tr>
+									<tr bgcolor="#FFFFFF">
+										<td width="14%" height="25">会议室地址</td>
+										<td width="16%"><input name="address" id="address" type="text" size="15"></td>
+									</tr>
+									<tr bgcolor="#FFFFFF">
+										<td height="25">是否有空调</td>
+										<td><label>是
+											<input type="radio" name="airconditioning" value="yes">
+										</label>
+											<label> 否
+												<input type="radio" name="airconditioning" value="no">
+											</label></td>
+									</tr>
+									<tr bgcolor="#FFFFFF">
+										<td height="25">能够容纳的人数</td>
+										<td><input name="number" id="number" type="text" size="15"></td>
+									</tr>
+									<tr bgcolor="#FFFFFF">
+										<td height="25">负责人</td>
+										<td><input name="principal" id="principal" type="text" size="15"></td>
+									</tr>
+									<tr bgcolor="#FFFFFF">
+										<td height="25">是否有投影仪</td>
+										<td><label>
+											是</label>
+											<label></label>
+											<label>
+												<input type="radio" name="projector" value="yes">
+											</label>
+											<label> 否
+												<input type="radio" name="projector" value="no">
+											</label>
+											<label>                       </label><label>                       </label></td>
+									</tr>
+									<tr bgcolor="#FFFFFF">
+										<td height="25">会议室使用次数（每月）</td>
+										<td><input name="times" id="times" type="text" size="15"></td>
+									</tr>
+
+									<tr bgcolor="#FFFFFF">
+										<td height="25">会议室是否使用</td>
+										<td><label>
+											是</label>
+											<label></label>
+											<label>
+												<input type="radio" name="state" value="使用中">
+											</label>
+											<label> 否
+												<input type="radio" name="state" value="空闲">
+											</label>
+											<label>                       </label><label>                       </label></td>
+									</tr>
+									<tr bgcolor="#FFFFFF">
+										<td width="14%" height="25" align="center">&nbsp;</td>
+										<td width="16%" height="25" align="center">
+											<button type="button" class="btn btn-sm btn-primary">修改</button>
+											&nbsp;&nbsp;
+
+											<label>
+											</label><label></label><label>
+										</label></td>
+									</tr>
+								</table> </td>
+						</tr>
+					</table>		</td>
+			</tr>
+		</table>
+	</form>
 	</body>
 	<script src="../../js/jquery-3.5.1.js"></script>
 	<script src="../../js/jquery-3.5.1.min.js"></script>
@@ -114,21 +116,20 @@
 	
 	        //从url中获取携带的参数
 	        var userId = location.search.split("=");
-	        console.log(userId)
+	        console.log("嘻嘻嘻"+userId)
 	
-	        $("#userId").val(userId[1]);
+	        $("#uid").val(userId[1]);
 	
 	        //查询要修改的数据
 	        $.ajax({
-	            url:"http://192.168.43.207:8080/conferenceroom/"+userId[1],
+	            url:"http://localhost:8080/conferenceroom/"+userId[1],
 	            type:"get",
 	            dataType:"json",
 	            success:function (result) {
-	            	console.log('22')
-					$("#id").val(result.id);
 	                $("#roomname").val(result.roomname);
 	                $("#address").val(result.address);
 	                $("#airconditioning").val(result.airconditioning);
+					$("#number").val(result.number);
 	                $("#principal").val(result.principal);
 					$("#projector").val(result.projector);
 					$("#times").val(result.times);
@@ -139,27 +140,26 @@
 	
 	
 	        $(".btn-primary").click(function () {
-	
 	            var jsonForm= $('#user-form').serializeArray();
-				console.log(jsonForm);
-	
+
+
 	            var jsonData = {};
 	
 	            $.each(jsonForm,function (i,v) {
 	                jsonData[v.name] = v.value;
 	            });
-	
+
 	            var params = JSON.stringify(jsonData);
-	
+	console.log("要死啦"+params);
 	            $.ajax({
-	                url:"http://192.168.31.8:8080/meetingroom_update/"+userId[1],
+	                url:"http://localhost:8080/meetingroom_update/"+userId[1],
 	                type:"put",
 	                data:params,
 	                dataType:"json",
 	                contentType:"application/json",
 	                success:function (result) {
-	                    if (result == "0"){
-	                        $(location).attr('href', 'meetingroom_list.html');
+	                    if (result == "1"){
+	                        $(location).attr('href', '../../html/conferenceroom/meetingroom_list.html');
 	                    }else{
 	                        //提示信息
 	                        var msg = '<div class="alert alert-warning" role="alert">添加失败!</div>';

@@ -47,7 +47,7 @@ public class ConferenceroomServiceImpl implements ConferenceroomService {
     }
 
     @Override
-    public int deleteConferenceroom(String id){
+    public int deleteConferenceroom(int id){
         int num=conferenceroomDao.deleteConferenceroom(id);
         return num;
     }
