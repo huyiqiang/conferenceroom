@@ -27,4 +27,22 @@
         role = #{role}
         WHERE id = #{id};
     </update>
+
+    <select id="findByWhere" resultType="com.unicom.conferenceroom.entity.user.User" >
+        select *
+        from user
+        where 1=1
+        <if test="username != null and username !=''">
+            and username= #{username}
+        </if>
+        <if test="department != null and department !=''" >
+            and department= #{department}
+        </if>
+        <if test="role != null and role !=''" >
+            and role= #{role}
+        </if>
+        <if test="password != null and password !=''" >
+            and password= #{password}
+        </if>
+    </select>
 </mapper>

@@ -16,4 +16,6 @@ public interface ApproveDao {
     Approve selectConferenceInfo(Approve approve);
 
     int approveConference(Approve approve);
+
+    void insertConferenceId(int id);
 }

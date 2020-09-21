@@ -21,11 +21,13 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "findById")
-    public User findUserByName(String us) {
-
-        User user = userService.selectUserByName("123");
-        return user;//返回的是Json数据，因为RestController注解中有@ResponseBody的作用
+    @RequestMapping(value = "findByWhere")
+    public String findByWhere(@RequestBody User user) {
+        if (user==null){
+            user = new User();
+        }
+        List<User> list = userService.findByWhere(user);
+        return JSON.toJSONString(list);//返回的是Json数据，因为RestController注解中有@ResponseBody的作用
     }
 //    查询所有用户
     @RequestMapping(value = "findUserAll")
@@ -36,7 +38,12 @@ public class UserController {
     //  添加用户
     @RequestMapping(value = "insertUser")
     public String insertUser(@RequestBody User user) {
-        int num = userService.insertUser(user);
+        userService.insertUser(user);
+        List<User> byWhere = userService.findByWhere(user);
+        int num =0;
+        for (User u:byWhere) {
+          num = u.getId();
+        }
         return JSON.toJSONString(Result.success(num));//返回的是Json数据，因为RestController注解中有@ResponseBody的作用
     }
     //  删除用户

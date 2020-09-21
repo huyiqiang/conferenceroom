@@ -102,4 +102,7 @@
         and c.id = #{conferenceId,jdbcType=VARCHAR}
     </if>
     </select>
+    <insert id="insertConferenceId">
+        insert into approve(conference_id) value (#{id})
+    </insert>
 </mapper>

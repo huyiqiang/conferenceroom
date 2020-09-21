@@ -19,4 +19,6 @@ public interface UserDao {
     int deleteUser(String id);
 
     int updateUser(User user);
+
+    ArrayList<User> findByWhere(User user);
 }

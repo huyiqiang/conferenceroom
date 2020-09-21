@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     UserDao userDao;
-    @Override
+
     public User selectUserByName(String sss) {
         //调用dao层
         User user = userDao.selectUserByName(sss);
@@ -41,5 +42,11 @@ public class UserServiceImpl implements UserService {
     public int updateUser(User user) {
         int num=userDao.updateUser(user);
         return num;
+    }
+
+    @Override
+    public List<User> findByWhere(User user) {
+        ArrayList<User> list=userDao.findByWhere(user);
+        return list;
     }
 }

@@ -105,4 +105,9 @@ public class ApproveServiceImpl implements ApproveService {
         return resultInfo;
     }
 
+    @Override
+    public void insertConferenceId(int id) {
+        approveDao.insertConferenceId(id);
+    }
+
 }

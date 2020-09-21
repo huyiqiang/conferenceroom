@@ -15,4 +15,6 @@ public interface ApproveService {
      ResultInfo selectConferenceInfo(String jsonStr) throws Exception;
 
      ResultInfo approveConference(String jsonStr) throws Exception;
+
+    void insertConferenceId(int id);
 }

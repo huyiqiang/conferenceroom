@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unicom.conferenceroom.dao.conference.ConferenceDao" >
+
+
+    <select id="findConferenceAll"  resultType="com.unicom.conferenceroom.entity.conference.Conference">
+        SELECT * FROM conference
+    </select>
+
+    <select id="selectConferenceId" resultType="Integer">
+        SELECT id FROM conference where topic=#{topic}
+    </select>
+    <insert id="insertConference">
+        INSERT INTO conference(topic,number,level, startTime,endTime,file,conferenceroom,facility,attendee,content)
+        VALUES(#{topic},#{number},#{level},#{startTime},#{endTime},#{file},#{conferenceroom},#{facility},#{attendee},#{content})
+    </insert>
+    <delete id="deleteConference">
+        DELETE  FROM conference where id=#{id}
+    </delete>
+    <update id="updateUser">
+        UPDATE user SET
+        username = #{username},
+        password = #{password},
+        repassword = #{repassword},
+        department = #{department},
+        role = #{role}
+        WHERE id = #{id};
+    </update>
+</mapper>
