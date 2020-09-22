@@ -1,5 +1,7 @@
 package com.unicom.conferenceroom.entity.conference;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Conference {
     private int id;
     private String topic;
@@ -7,7 +9,8 @@ public class Conference {
     private String level;
     private String startTime;
     private String endTime;
-    private String file;
+    private MultipartFile file;
+    private String filepath;
     private String conferenceroom;
     private String facility;
     private String attendee;
@@ -61,11 +64,19 @@ public class Conference {
         this.endTime = endTime;
     }
 
-    public String getFile() {
+    public String getFilepath() {
+        return filepath;
+    }
+
+    public void setFilepath(String filepath) {
+        this.filepath = filepath;
+    }
+
+    public MultipartFile getFile() {
         return file;
     }
 
-    public void setFile(String file) {
+    public void setFile(MultipartFile file) {
         this.file = file;
     }
 
@@ -99,5 +110,23 @@ public class Conference {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "Conference{" +
+                "id=" + id +
+                ", topic='" + topic + '\'' +
+                ", number=" + number +
+                ", level='" + level + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", file=" + file +
+                ", filepath='" + filepath + '\'' +
+                ", conferenceroom='" + conferenceroom + '\'' +
+                ", facility='" + facility + '\'' +
+                ", attendee='" + attendee + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }

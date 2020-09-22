@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>index</title>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+<script language="javascript" type="text/javascript">
+function test(){
+ var username=document.form1.username.value;
+ var password=document.form1.password.value;
+ if(username==""){
+ alert("请输入您的用户名！");
+ return false;
+ }
+ else if(password==""){
+ alert("请输入您的密码！");
+ return false;
+ }
+ document.form1.submit();
+}
+</script>
+</head>
+<body>
+<form action="frame.html" method="post" name="form1">
+<table align="center"   cellpadding="0" cellspacing="0" border="0" width="960" class="back_index_top" height="450">
+	<tr>
+	  <td align="right" valign="middle" background="images/index11.gif">
+        <div id="Layer1" style="position:absolute; width:518px; height:76px; z-index:1; left: 444px; top: 192px;">
+	    <table cellpadding="0" cellspacing="0" border="0" width="550">
+          <tr>
+            <td width="40%" class="txt_index style3 style1"> 用&nbsp;户&nbsp;名： </td>
+            <td width="59%" align="left">
+              <input name="username" type="text" style="width:200px;" />
+            </td>
+            <td width="1%">&nbsp; </td>
+          </tr>
+          <tr>
+            <td class="txt_index style3 style1"> 密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+            <td align="left">
+              <input name="password" type="password" style="width:200px;" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;
+              <input name="button" type="button" class="button_login" onclick="test();" value="登陆" />
+              <input name="reset" type="reset" class="button_reset" value="重置" />
+            </td>
+          </tr>
+        </table>
+	  </div></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
