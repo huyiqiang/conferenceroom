@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 必须先引入vue，  后使用element-ui -->
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<!-- 引入element 的组件库-->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+		<!-- <script src="js/mock-min.js" type="text/javascript" charset="utf-8"></script> -->
+		<style type="text/css">
+			#app{
+				margin-top:15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h4 style="text-align: center;">用户信息查询</h5>
+			 <el-row :gutter="20" style="margin-bottom:15px">
+			        <el-col :span="8">
+			          <el-input size="mini" placeholder="请输入用户名称" v-model="search" clearable :span="8">
+			            <el-button slot="append" icon="el-icon-search"></el-button>
+			          </el-input>
+			        </el-col>
+			        <el-col :span="4">
+			          <el-button size="mini" type="primary">添加用户</el-button>
+			        </el-col>
+			      </el-row>
+			 <el-table
+			    :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+			    style="width: 100%">
+			    <el-table-column
+			      label="用户编号"
+			      prop="date">
+			    </el-table-column>
+			    <el-table-column
+			      label="用户名称"
+			      prop="name">
+			    </el-table-column>
+			    <el-table-column
+				label="操作"
+			      align="left">
+			     <!-- <template slot="header" slot-scope="scope">
+			        <el-input
+			          v-model="search"
+			          size="mini"
+			          placeholder="输入关键字搜索"/>
+			      </template> -->
+			      <template slot-scope="scope">
+			        <el-button
+			          size="mini"
+			          @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+			        <el-button
+			          size="mini"
+			          type="danger"
+			          @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
+			      </template>
+			    </el-table-column>
+				
+			  </el-table>
+			  <el-pagination
+			    :page-size="20"
+			    :pager-count="11"
+			    layout="prev, pager, next"
+			    :total="1000">
+			  </el-pagination>
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					 tableData: [{
+					          date: '2016-05-02',
+					          name: '王小虎',
+					          address: '上海市普陀区金沙江路 1518 弄'
+					        }, {
+					          date: '2016-05-04',
+					          name: '王小虎',
+					          address: '上海市普陀区金沙江路 1517 弄'
+					        }, {
+					          date: '2016-05-01',
+					          name: '王小虎',
+					          address: '上海市普陀区金沙江路 1519 弄'
+					        }, {
+					          date: '2016-05-03',
+					          name: '王小虎',
+					          address: '上海市普陀区金沙江路 1516 弄'
+					        }],
+					        search: ''
+				},
+				methods:{
+					handleEdit(index, row) {
+					        console.log(index, row);
+					      },
+					      handleDelete(index, row) {
+					        console.log(index, row);
+					      }
+				}
+				
+			})
+		</script>
+	</body>
+</html>

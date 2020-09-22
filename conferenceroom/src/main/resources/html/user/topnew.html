@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<script>
+function closed(){
+var a = confirm("确定要关闭页面吗?");
+if(a){
+window.top.close();
+}else{}
+}
+</script>
+<title>top</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/indexstyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form name="form1" method="post" action="">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+    <tr> 
+      <td width="22"><img src="images/logo.gif" width="300" height="62" ></td>
+      <td background="images/logo2.gif" >
+		            <TABLE  height=20 cellSpacing=0 cellPadding=2 
+            width="100%" border=0>
+              <TR>
+                <TD vAlign=bottom align=middle><a href="meetingroom/frameset.html" target="mainFrame">会议室管理</A> </TD>
+                <TD vAlign=bottom align=middle>|</TD>
+                <TD vAlign=bottom align=middle><a href="device/frameset.html" target="mainFrame">设备管理</A> </TD>
+                <TD vAlign=bottom align=middle>|</TD>
+                <TD vAlign=bottom align=middle><a href="meeting/frameset.html" target="mainFrame">会议管理</A> </TD>
+                <TD vAlign=bottom align=middle>|</TD>
+                <TD vAlign=bottom align=middle><a href="sp/frameset.html" target="mainFrame">审批管理</A> </TD>
+                <TD vAlign=bottom align=middle>|</TD>
+                <TD vAlign=bottom align=middle><a href="power/frameset.html" target="mainFrame">权限管理</A> </TD>
+                <TD vAlign=bottom align=middle>|</TD>
+                <TD vAlign=bottom align=middle><a href="role/frameset.html" target="mainFrame">角色管理</A> </TD>
+                <TD vAlign=bottom align=middle>|</TD>
+                <TD vAlign=bottom align=middle><a href="user/frameset.html" target="mainFrame">用户管理</A> </TD>
+                <TD vAlign=bottom align=middle>|</TD>
+                <TD vAlign=bottom align=middle><a href="#" onClick="closed()">退出</A> </TD>
+                </TR></TABLE></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

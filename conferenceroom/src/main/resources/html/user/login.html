@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <script src="js/jquery-3.5.1.js" type="text/javascript" charset="utf-8"></script> -->
+		<!--引入 element-ui 的样式，-->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 必须先引入vue，  后使用element-ui -->
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<!-- 引入element 的组件库-->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+		
+		
+		<!-- mock -->
+		<!-- <script src="js/mock-min.js" type="text/javascript" charset="utf-8"></script> -->
+		<!-- <script src="js/login.js" type="text/javascript" charset="utf-8"></script> -->
+		<!-- <script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/jquerysession.js" ></script> -->
+		<!-- <script src="mock.js" type="text/javascript" charset="utf-8"></script> -->
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	</head>
+	<body>
+		<div id="app">
+			<div class="container">
+				<div class="login">
+					<div class="projectName">
+						<span>会议室管理系统</span>
+					</div>
+					<div class="loginForm">
+						<el-form :model="loginForm" :rules="rules" label-width="100px" ref="loginForm">
+							<el-form-item label="用户名" prop="username">
+								<el-input v-model="loginForm.username" placeholder="请输入用户名"></el-input>
+							</el-form-item>
+							<el-form-item label="密码" prop="password">
+								<el-input v-model="loginForm.password" type="password" placeholder="请输入密码"></el-input>
+							</el-form-item>
+							<el-form-item>
+								<el-button type="primary" @click="submitForm('loginForm')">登录</el-button>
+								<el-button @click="resetForm('loginForm')">重置</el-button>
+							</el-form-item>
+						</el-form>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

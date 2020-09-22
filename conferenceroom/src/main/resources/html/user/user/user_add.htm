@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>新增用户</title>
+		<link href="../css/table.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" language="gb2312">
+			<!--
+			function Check() {
+				pswd = document.form1.password.value;
+				var re = /^\d{5,12}$/; // 5-12位的数字;
+				if (pswd.match(re)) {
+					document.form1.submit();
+
+				} else {
+					alert("密码格式填写错误！");
+					return false;
+				}
+				return false;
+			}
+		</script>
+	</head>
+	<body leftmargin="0" topmargin="15">
+		<form name="form1" action="user_list2.htm">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th>新增用户</th>
+				</tr>
+				<tr>
+					<td>
+						<div align="left">
+							新增用户:</div>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td>
+
+						<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="B1BCEC">
+							<tr>
+								<td bgcolor="#993300">
+									<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#993300">
+										<tr>
+											<td height="2" bgcolor="#993300"></td>
+										</tr>
+									</table>
+									<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#993300">
+										<tr bgcolor="#FFFFFF">
+											<td width="14%">用户名称</td>
+											<td width="14%"><input name="username" type="text" size="15">
+												*</td>
+											<td width="14%" height="25">用户密码</td>
+											<td width="16%"><input name="password" type="password" size="15">
+												*</td>
+										</tr>
+										<tr bgcolor="#FFFFFF">
+											<td width="14%">所属部门</td>
+											<td width="14%"><select name="bm">
+													<option value=0>行政部</option>
+													<option value=1>市场部</option>
+													<option value=2>研发中心</option>
+													<option value=3>销售部</option>
+													<option value=4>总裁办公室</option>
+												</select></td>
+											<td width="14%" height="25">确认密码</td>
+											<td width="16%"><input name="repassword" type="password" size="15">
+												*</td>
+										</tr>
+										<tr bgcolor="#FFFFFF">
+											<td width="14%">用户角色</td>
+											<td height="25" colspan="3"><INPUT type="checkbox" name="usertype" value="1">
+												普通用户 　　
+												<INPUT type="checkbox" name="usertype" value="2">
+												设备管理员 　　
+												<INPUT type="checkbox" name="usertype" value="3">
+												会议室管理员 　　
+												<INPUT type="checkbox" name="usertype" value="4">
+												会议审批员 　　
+												<INPUT type="checkbox" name="usertype" value="5">
+												系统管理员 </td>
+										</tr>
+
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="1" class="sub">
+				<tr>
+					<td width="50%" style="text-align:center">&nbsp;</td>
+					<td width="50%" style="text-align:center"><img src="../images/tj.jpg" width="53" height="20" border="0" onClick="return Check()">&nbsp;&nbsp;
+						<input name="imageField" type="image" src="../images/cz.jpg" width="53" height="20" border="0"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
